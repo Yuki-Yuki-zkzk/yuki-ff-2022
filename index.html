@@ -6,6 +6,7 @@
 <title>Yuki ff 2022</title>
 
 <style>
+/* 基礎設定 */
 *{
     margin:0;
     padding:0;
@@ -31,6 +32,7 @@ a{
     color:inherit;
 }
 
+/* 頁首 */
 header{
     position:sticky;
     top:0;
@@ -66,27 +68,19 @@ nav a:hover{
     color:#65caff;
 }
 
+/* --- 【CSS 修改點 1/2】刪除原來的 .avatar 樣式 --- */
+/* 原來的圓框、藍色光暈樣式已從此處完全刪除 */
+
+/* 主視覺區域 */
 .hero{
     min-height:560px;
-    padding:45px 20px 55px;
+    /* --- 【CSS 修改點 2/2】微調內距 --- */
+    padding:60px 20px 55px; /* 稍微增加上方內距，讓標題位置更好看 */
     text-align:center;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-}
-
-.avatar{
-    width:230px;
-    height:230px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #71d1ff;
-    box-shadow:
-        0 0 15px #2fbaff,
-        0 0 40px rgba(40,180,255,.55),
-        0 0 90px rgba(40,180,255,.25);
-    background:#091426;
 }
 
 .hero h1{
@@ -115,6 +109,7 @@ nav a:hover{
     );
 }
 
+/* 通用區塊設定 */
 section{
     width:92%;
     max-width:1250px;
@@ -136,6 +131,7 @@ section{
     margin-top:4px;
 }
 
+/* 下載卡片 */
 .cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -169,11 +165,13 @@ section{
     border-radius:50%;
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:space-between;
     font-size:34px;
     border:2px solid #38bfff;
     box-shadow:0 0 20px rgba(50,190,255,.25);
     margin-bottom:18px;
+    margin-left:auto;
+    margin-right:auto; /* 居中卡片圖示 */
 }
 
 .card h3{
@@ -203,6 +201,7 @@ section{
     box-shadow:0 8px 25px rgba(30,170,255,.35);
 }
 
+/* 社群 */
 .social{
     margin-top:50px;
 }
@@ -256,6 +255,7 @@ section{
     color:#6bcaff;
 }
 
+/* 頁尾 */
 footer{
     margin-top:50px;
     padding:28px 20px;
@@ -270,6 +270,7 @@ footer{
     margin-top:5px;
 }
 
+/* 手機版回應式 */
 @media(max-width:800px){
 
     header{
@@ -294,10 +295,8 @@ footer{
         padding-top:35px;
     }
 
-    .avatar{
-        width:175px;
-        height:175px;
-    }
+    /* --- 【CSS 修改點 1/2】刪除原來的 .avatar 樣式 --- */
+    /* 原來的圓框、藍色光暈樣式已從此處完全刪除 */
 
     .hero h1{
         font-size:42px;
@@ -341,6 +340,8 @@ footer{
 </header>
 
 <section id="home" class="hero">
+
+    <!-- --- 【HTML 修改點】已刪除此處的 <img class="avatar"> 標籤 --- -->
 
     <h1>Yuki ff 2022</h1>
 
