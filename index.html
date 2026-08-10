@@ -7,314 +7,340 @@
 <title>Yuki ff 2022</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, "Noto Sans TC", sans-serif;
-    color: #eaf7ff;
+body{
+    font-family:Arial,"Noto Sans TC",sans-serif;
+    color:#eaf7ff;
     background:
-        radial-gradient(circle at 80% 15%, rgba(143,211,255,.18), transparent 30%),
-        radial-gradient(circle at 15% 70%, rgba(72,170,255,.12), transparent 32%),
+        radial-gradient(circle at 80% 15%,rgba(143,211,255,.18),transparent 30%),
+        radial-gradient(circle at 15% 70%,rgba(72,170,255,.12),transparent 32%),
         #05080d;
-    line-height: 1.7;
+    line-height:1.7;
 }
 
 /* 導覽列 */
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 7%;
-    background: rgba(5,8,13,.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid #1d3545;
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    background:rgba(5,8,13,.88);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #1c3444;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #8fd3ff;
+.logo{
+    color:#8fd3ff;
+    font-size:25px;
+    font-weight:bold;
+    text-decoration:none;
 }
 
-.nav-links {
-    display: flex;
-    gap: 25px;
+nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
 }
 
-.nav-links a {
-    color: #bcd9e8;
-    text-decoration: none;
-    transition: .3s;
+nav ul li a{
+    color:#dcefff;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
 }
 
-.nav-links a:hover {
-    color: #8fd3ff;
+nav ul li a:hover{
+    color:#8fd3ff;
 }
 
 /* 首頁 */
-.hero {
-    min-height: 90vh;
-    padding: 80px 7%;
-    display: flex;
-    align-items: center;
+.hero{
+    min-height:calc(100vh - 78px);
+    display:flex;
+    align-items:center;
+    padding:90px 7%;
 }
 
-.hero-content {
-    max-width: 1050px;
-    width: 100%;
+.hero-content{
+    max-width:900px;
 }
 
-.badge {
-    display: inline-block;
-    padding: 8px 22px;
-    border: 1px solid #52788f;
-    border-radius: 50px;
-    color: #a9dfff;
-    margin-bottom: 30px;
+.badge{
+    display:inline-block;
+    padding:9px 22px;
+    border:1px solid #38556b;
+    border-radius:30px;
+    color:#a9c0d0;
+    margin-bottom:28px;
+    letter-spacing:1px;
 }
 
-.hero h1 {
-    font-size: clamp(48px, 9vw, 90px);
-    line-height: 1.05;
-    margin-bottom: 25px;
+.hero h1{
+    font-size:clamp(48px,8vw,88px);
+    line-height:1.1;
+    margin-bottom:25px;
 }
 
-.hero h1 span {
-    color: #8fd3ff;
+.hero h1 span{
+    color:#8fd3ff;
 }
 
-.hero p {
-    max-width: 700px;
-    font-size: 20px;
-    color: #91a8b8;
-    margin-bottom: 35px;
+.hero p{
+    color:#91a5b5;
+    font-size:21px;
+    max-width:750px;
+    margin-bottom:35px;
 }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+.buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
 }
 
-.btn {
-    display: inline-block;
-    padding: 15px 28px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:14px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.btn-main {
-    background: #8fd3ff;
-    color: #061018;
+.btn-main{
+    background:#8fd3ff;
+    color:#06101a;
 }
 
-.btn-main:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(143,211,255,.25);
+.btn-main:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(143,211,255,.25);
 }
 
-.btn-dark {
-    background: #111923;
-    border: 1px solid #273f50;
-    color: #eaf7ff;
+.btn-dark{
+    background:#101923;
+    border:1px solid #273d4d;
+    color:#eaf7ff;
 }
 
-.btn-dark:hover {
-    border-color: #8fd3ff;
-    transform: translateY(-3px);
-}
-
-/* 圖片 */
-.image-section {
-    padding: 20px 7% 80px;
-}
-
-.image-box {
-    max-width: 900px;
-    margin: auto;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid #29475b;
-    background: #0b1118;
-    box-shadow: 0 20px 60px rgba(0,0,0,.45);
-}
-
-.image-box img {
-    width: 100%;
-    display: block;
-    height: auto;
+.btn-dark:hover{
+    border-color:#8fd3ff;
 }
 
 /* 一般區塊 */
-section {
-    padding: 80px 7%;
+section{
+    padding:90px 7%;
 }
 
-.container {
-    max-width: 1050px;
-    margin: auto;
+.container{
+    max-width:1100px;
+    margin:auto;
 }
 
-.title {
-    font-size: 38px;
-    margin-bottom: 10px;
-    color: #eaf7ff;
+.title{
+    font-size:42px;
+    margin-bottom:10px;
 }
 
-.subtitle {
-    color: #758692;
-    margin-bottom: 35px;
+.subtitle{
+    color:#758b9b;
+    font-size:19px;
+    margin-bottom:40px;
 }
 
-/* 下載 */
-.download-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+/* 小孤獨頭像 */
+.profile-image{
+    width:100%;
+    max-width:700px;
+    margin:0 auto 70px;
+    text-align:center;
 }
 
-.card {
-    background: linear-gradient(145deg, #0d151e, #091018);
-    border: 1px solid #20394b;
-    border-radius: 18px;
-    padding: 30px;
-    transition: .3s;
+.profile-image img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:24px;
+    border:1px solid #294355;
+    box-shadow:
+        0 25px 70px rgba(72,170,255,.15),
+        0 0 50px rgba(143,211,255,.08);
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #8fd3ff;
+/* 卡片 */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
 }
 
-.card-icon {
-    font-size: 35px;
-    margin-bottom: 15px;
+.card{
+    padding:32px;
+    background:rgba(10,19,28,.75);
+    border:1px solid #223b4d;
+    border-radius:22px;
+    transition:.3s;
 }
 
-.card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #bce7ff;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#8fd3ff;
+    box-shadow:0 15px 40px rgba(72,170,255,.10);
 }
 
-.card p {
-    color: #8399a8;
-    margin-bottom: 20px;
+.card-icon{
+    font-size:35px;
+    margin-bottom:15px;
 }
 
-/* 關於 */
-.about-box {
-    max-width: 850px;
-    background: #0b121a;
-    border: 1px solid #20394b;
-    border-radius: 20px;
-    padding: 35px;
+.card h3{
+    font-size:27px;
+    color:#a9dcff;
+    margin-bottom:8px;
 }
 
-.about-box p {
-    color: #9bb0be;
-    font-size: 17px;
+.card p{
+    color:#8297a8;
+    margin-bottom:20px;
 }
 
-.about-box strong {
-    color: #8fd3ff;
+.card a{
+    display:inline-block;
+    padding:11px 22px;
+    background:#8fd3ff;
+    color:#07121c;
+    border-radius:11px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.card a:hover{
+    opacity:.85;
 }
 
 /* 社群 */
-.socials {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.social {
-    padding: 22px;
-    background: #0b121a;
-    border: 1px solid #20394b;
-    border-radius: 15px;
-    text-decoration: none;
-    color: #eaf7ff;
-    transition: .3s;
+.social{
+    text-align:center;
+    padding:28px 20px;
+    background:#0a131c;
+    border:1px solid #223b4d;
+    border-radius:20px;
 }
 
-.social:hover {
-    border-color: #8fd3ff;
-    transform: translateY(-3px);
+.social h3{
+    color:#a9dcff;
+    margin-bottom:8px;
 }
 
-.social span {
-    color: #8fd3ff;
-    font-weight: bold;
+.social p{
+    color:#8196a7;
+    word-break:break-word;
+}
+
+.social a{
+    color:#8fd3ff;
+    text-decoration:none;
+}
+
+/* 關於 */
+.about-box{
+    max-width:800px;
+    padding:35px;
+    background:#09121b;
+    border:1px solid #223b4d;
+    border-radius:22px;
+}
+
+.about-box p{
+    color:#91a5b5;
+    font-size:18px;
 }
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid #182c3a;
-    color: #647986;
+footer{
+    text-align:center;
+    padding:45px 20px;
+    border-top:1px solid #172a38;
+    color:#607485;
 }
 
 /* 手機 */
-@media (max-width: 700px) {
+@media(max-width:700px){
 
-    nav {
-        padding: 16px 5%;
+    nav{
+        height:auto;
+        min-height:72px;
+        padding:16px 5%;
     }
 
-    .logo {
-        font-size: 19px;
+    .logo{
+        font-size:20px;
     }
 
-    .nav-links {
-        gap: 12px;
-        font-size: 14px;
+    nav ul{
+        gap:14px;
     }
 
-    .hero {
-        padding: 65px 6%;
-        min-height: 80vh;
+    nav ul li a{
+        font-size:15px;
     }
 
-    .hero p {
-        font-size: 17px;
+    .hero{
+        min-height:auto;
+        padding:90px 7% 100px;
     }
 
-    section {
-        padding: 60px 6%;
+    .hero h1{
+        font-size:50px;
     }
 
-    .download-box {
-        grid-template-columns: 1fr;
+    .hero p{
+        font-size:18px;
     }
 
-    .socials {
-        grid-template-columns: 1fr;
+    section{
+        padding:70px 6%;
     }
 
-    .title {
-        font-size: 32px;
+    .title{
+        font-size:35px;
     }
 
-    .image-section {
-        padding: 10px 5% 60px;
+    .cards{
+        grid-template-columns:1fr;
     }
 
-    .image-box {
-        border-radius: 16px;
+    .social-grid{
+        grid-template-columns:1fr;
+    }
+
+    .profile-image{
+        margin-bottom:55px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
     }
 }
 </style>
@@ -324,13 +350,13 @@ footer {
 
 <!-- 導覽列 -->
 <nav>
-    <div class="logo">Yuki ff 2022</div>
+    <a href="#home" class="logo">Yuki ff 2022</a>
 
-    <div class="nav-links">
-        <a href="#home">首頁</a>
-        <a href="#download">下載</a>
-        <a href="#about">關於</a>
-    </div>
+    <ul>
+        <li><a href="#home">首頁</a></li>
+        <li><a href="#download">下載</a></li>
+        <li><a href="#about">關於</a></li>
+    </ul>
 </nav>
 
 
@@ -339,7 +365,7 @@ footer {
     <div class="hero-content">
 
         <div class="badge">
-            FREE FIRE • PERSONAL WEBSITE
+            FREE FIRE • 2022
         </div>
 
         <h1>
@@ -347,8 +373,9 @@ footer {
         </h1>
 
         <p>
-            歡迎來到 Yuki 的 Free Fire 2022 個人網站。
-            這裡分享遊戲內容、遊戲資源，以及屬於我的 FF 世界。
+            歡迎來到 Yuki ff 2022 個人網站。
+            這裡分享 Free Fire 2022 相關內容、
+            遊戲資訊、下載資源以及我的社群。
         </p>
 
         <div class="buttons">
@@ -357,7 +384,7 @@ footer {
             </a>
 
             <a href="#about" class="btn btn-dark">
-                關於我
+                關於 Yuki
             </a>
         </div>
 
@@ -365,42 +392,43 @@ footer {
 </section>
 
 
-<!-- 圖片 -->
-<section class="image-section">
-
-    <div class="image-box">
-        <img src="yuki.jpg" alt="Yuki">
-    </div>
-
-</section>
-
-
-<!-- 下載 -->
+<!-- 下載區 -->
 <section id="download">
 
     <div class="container">
 
-        <h2 class="title">下載與帳號</h2>
+        <!-- 小孤獨頭像：一定放在最上面 -->
+        <div class="profile-image">
+            <img src="kogoto.jpg" alt="小孤獨頭像">
+        </div>
+
+        <h2 class="title">
+            下載與帳號
+        </h2>
 
         <p class="subtitle">
             Free Fire 2022 相關下載與帳號服務
         </p>
 
-        <div class="download-box">
 
-            <!-- 安卓下載 -->
+        <div class="cards">
+
+            <!-- 安卓版 -->
             <div class="card">
 
-                <div class="card-icon">📱</div>
+                <div class="card-icon">
+                    📱
+                </div>
 
-                <h3>下載安卓版</h3>
+                <h3>
+                    下載安卓版
+                </h3>
 
                 <p>
                     Android 版本下載
                 </p>
 
                 <a
-                    class="btn btn-main"
                     href="https://drive.usercontent.google.com/download?id=1trXRQV690PtNvrBGV3LVaF-MwAdpUOV0&export=download&authuser=0"
                     target="_blank"
                     rel="noopener"
@@ -414,16 +442,19 @@ footer {
             <!-- 金鑰 -->
             <div class="card">
 
-                <div class="card-icon">🔑</div>
+                <div class="card-icon">
+                    🔑
+                </div>
 
-                <h3>金鑰</h3>
+                <h3>
+                    金鑰
+                </h3>
 
                 <p>
-                    前往金鑰網站
+                    前往金鑰服務頁面
                 </p>
 
                 <a
-                    class="btn btn-main"
                     href="https://register.samosasmobiles.dpdns.org/"
                     target="_blank"
                     rel="noopener"
@@ -437,16 +468,19 @@ footer {
             <!-- 創建帳號 -->
             <div class="card">
 
-                <div class="card-icon">👤</div>
+                <div class="card-icon">
+                    👤
+                </div>
 
-                <h3>創建帳號</h3>
+                <h3>
+                    創建帳號
+                </h3>
 
                 <p>
-                    前往帳號註冊網站
+                    前往帳號註冊頁面
                 </p>
 
                 <a
-                    class="btn btn-main"
                     href="https://register.samosasmobiles.dpdns.org/"
                     target="_blank"
                     rel="noopener"
@@ -463,29 +497,88 @@ footer {
 </section>
 
 
+<!-- 社群 -->
+<section>
+
+    <div class="container">
+
+        <h2 class="title">
+            我的社群
+        </h2>
+
+        <p class="subtitle">
+            歡迎來找 Yuki
+        </p>
+
+        <div class="social-grid">
+
+            <div class="social">
+                <div class="card-icon">▶️</div>
+                <h3>YouTube</h3>
+                <p>
+                    <a href="https://www.youtube.com/@ImYuki-x54"
+                       target="_blank"
+                       rel="noopener">
+                        @ImYuki-x54
+                    </a>
+                </p>
+            </div>
+
+
+            <div class="social">
+                <div class="card-icon">🎵</div>
+                <h3>TikTok</h3>
+                <p>
+                    <a href="https://www.tiktok.com/@Im_yuki..67"
+                       target="_blank"
+                       rel="noopener">
+                        @Im_yuki..67
+                    </a>
+                </p>
+            </div>
+
+
+            <div class="social">
+                <div class="card-icon">💬</div>
+                <h3>Discord</h3>
+                <p>
+                    zk._.001
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- 關於 -->
 <section id="about">
 
     <div class="container">
 
-        <h2 class="title">關於 Yuki</h2>
+        <h2 class="title">
+            關於 Yuki
+        </h2>
 
         <p class="subtitle">
-            My Free Fire World
+            Free Fire 2022 Player
         </p>
 
         <div class="about-box">
 
             <p>
-                嗨，我是 <strong>Yuki</strong>！🎮
+                嗨，我是 <strong>Yuki</strong> 🎮
                 <br><br>
 
                 我的主要遊戲是
                 <strong>Free Fire 2022</strong>。
                 <br><br>
 
-                這個網站是我的個人 Free Fire 網站，
-                用來分享遊戲相關內容、資源與資訊。
+                這個網站是我的個人網站，
+                用來分享遊戲相關內容、
+                下載資源以及我的社群資訊。
                 <br><br>
 
                 歡迎來到我的 FF 世界！
@@ -498,67 +591,8 @@ footer {
 </section>
 
 
-<!-- 社群 -->
-<section>
-
-    <div class="container">
-
-        <h2 class="title">我的社群</h2>
-
-        <p class="subtitle">
-            Follow Yuki
-        </p>
-
-        <div class="socials">
-
-            <a
-                class="social"
-                href="https://www.youtube.com/@ImYuki-x54"
-                target="_blank"
-                rel="noopener"
-            >
-                ▶️ YouTube
-                <br>
-                <span>@ImYuki-x54</span>
-            </a>
-
-
-            <a
-                class="social"
-                href="https://www.tiktok.com/@Im_yuki..67"
-                target="_blank"
-                rel="noopener"
-            >
-                🎵 TikTok
-                <br>
-                <span>Im_yuki..67</span>
-            </a>
-
-
-            <div class="social">
-                💬 Discord
-                <br>
-                <span>zk._.001</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Footer -->
 <footer>
-
-    <p>
-        © 2026 Yuki ff 2022
-    </p>
-
-    <p>
-        Made with 💙 by Yuki
-    </p>
-
+    © 2026 Yuki ff 2022 · Free Fire Personal Website
 </footer>
 
 </body>
