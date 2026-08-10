@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>雪・FF 2022</title>
+<title>Yuki ff 2022</title>
 
 <style>
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -18,258 +18,278 @@ html {
 
 body {
     font-family: Arial, "Noto Sans TC", sans-serif;
-    background: #050608;
-    color: #fff;
+    color: #eaf7ff;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(143,211,255,.18), transparent 30%),
+        radial-gradient(circle at 20% 70%, rgba(80,170,255,.10), transparent 35%),
+        #05080d;
+    min-height: 100vh;
     line-height: 1.7;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 導覽列 */
 nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 18px 7%;
+    right: 0;
+    height: 70px;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(5, 6, 8, 0.9);
-    border-bottom: 1px solid #20242a;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    padding: 0 7%;
+    background: rgba(5,8,13,.78);
+    border-bottom: 1px solid rgba(143,211,255,.15);
+    backdrop-filter: blur(15px);
 }
 
 .logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
+    font-size: 21px;
+    font-weight: 900;
 }
 
 .logo span {
-    color: #f5d76e;
+    color: #8fd3ff;
 }
 
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    margin-left: 25px;
+.nav-links {
+    display: flex;
+    gap: 25px;
+    color: #9eabb5;
     font-size: 14px;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #f5d76e;
+.nav-links a:hover {
+    color: #8fd3ff;
 }
 
+/* 首頁 */
 .hero {
     min-height: 100vh;
-    padding: 180px 8% 100px;
     display: flex;
     align-items: center;
-    background:
-        radial-gradient(circle at 80% 30%, #25220f 0, transparent 35%),
-        radial-gradient(circle at 20% 70%, #111827 0, transparent 35%),
-        #050608;
+    padding: 130px 7% 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: 5%;
+    top: 20%;
+    border-radius: 50%;
+    background: rgba(143,211,255,.09);
+    filter: blur(80px);
 }
 
 .hero-content {
     max-width: 850px;
+    position: relative;
+    z-index: 2;
 }
 
 .badge {
     display: inline-block;
-    padding: 7px 15px;
-    border: 1px solid #3b3f45;
-    border-radius: 30px;
-    color: #aaa;
+    padding: 8px 17px;
+    border: 1px solid rgba(143,211,255,.45);
+    border-radius: 50px;
+    color: #cceeff;
     font-size: 13px;
     margin-bottom: 25px;
 }
 
 h1 {
-    font-size: clamp(48px, 9vw, 100px);
-    line-height: 1;
+    font-size: clamp(50px, 10vw, 100px);
+    line-height: .95;
     letter-spacing: -4px;
-    margin-bottom: 25px;
 }
 
 h1 span {
-    color: #f5d76e;
+    color: #8fd3ff;
+    text-shadow: 0 0 30px rgba(143,211,255,.35);
 }
 
-.hero p {
+.hero-text {
+    margin-top: 28px;
     max-width: 650px;
-    color: #999;
-    font-size: 18px;
-    margin-bottom: 35px;
+    color: #9eabb5;
+    font-size: 17px;
+}
+
+/* 按鈕 */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 35px;
 }
 
 .btn {
     display: inline-block;
-    padding: 13px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #050608;
-    background: #f5d76e;
-    font-weight: bold;
-    margin-right: 10px;
-    transition: 0.3s;
+    padding: 14px 24px;
+    border-radius: 13px;
+    font-weight: 800;
+    transition: .25s;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(245,215,110,0.2);
+    transform: translateY(-4px);
 }
 
-.btn.dark {
-    color: #fff;
-    background: #15181d;
-    border: 1px solid #30343a;
+.btn-blue {
+    background: #8fd3ff;
+    color: #061019;
+    box-shadow: 0 10px 30px rgba(143,211,255,.12);
 }
 
+.btn-dark {
+    background: #111923;
+    border: 1px solid #27333e;
+    color: #eaf7ff;
+}
+
+/* 區塊 */
 section {
-    padding: 100px 8%;
+    padding: 90px 7%;
 }
 
-.section-title {
-    margin-bottom: 45px;
-}
-
-.section-title small {
-    color: #f5d76e;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.section-title h2 {
+.title {
     font-size: 38px;
-    margin-top: 8px;
-}
-
-.section-title p {
-    color: #777;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-.card {
-    background: #0d1015;
-    border: 1px solid #242832;
-    border-radius: 18px;
-    padding: 30px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #f5d76e;
-}
-
-.icon {
-    font-size: 30px;
-    margin-bottom: 18px;
-}
-
-.card h3 {
     margin-bottom: 10px;
 }
 
-.card p {
-    color: #888;
+.subtitle {
+    color: #758692;
+    margin-bottom: 35px;
+}
+
+/* 下載區 */
+.download-box {
+    max-width: 1050px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.download-card {
+    padding: 30px;
+    border-radius: 22px;
+    background: rgba(13,20,28,.78);
+    border: 1px solid rgba(143,211,255,.14);
+    transition: .3s;
+}
+
+.download-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(143,211,255,.45);
+    box-shadow: 0 15px 45px rgba(0,0,0,.3);
+}
+
+.download-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.download-card h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.download-card p {
+    color: #82919d;
+    margin-bottom: 22px;
+}
+
+/* 社群 */
+.socials {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+    max-width: 1050px;
+}
+
+.social-card {
+    padding: 25px;
+    border-radius: 18px;
+    background: #0d141c;
+    border: 1px solid #202c36;
+}
+
+.social-card h3 {
+    margin-bottom: 5px;
+}
+
+.social-card p {
+    color: #83939f;
     font-size: 14px;
 }
 
+.social-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #8fd3ff;
+    font-weight: bold;
+}
+
+/* 關於 */
 .about-box {
-    background: #0d1015;
-    border: 1px solid #242832;
-    border-radius: 20px;
-    padding: 40px;
+    max-width: 1050px;
+    padding: 35px;
+    border-radius: 22px;
+    background: rgba(13,20,28,.78);
+    border: 1px solid rgba(143,211,255,.14);
 }
 
 .about-box p {
-    color: #999;
+    color: #96a5b0;
     line-height: 2;
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 30px;
-}
-
-.stat {
-    background: #0d1015;
-    border: 1px solid #242832;
-    border-radius: 16px;
-    padding: 25px;
-    text-align: center;
-}
-
-.stat strong {
-    display: block;
-    font-size: 35px;
-    color: #f5d76e;
-}
-
-.stat span {
-    color: #777;
-    font-size: 13px;
-}
-
+/* Footer */
 footer {
-    padding: 40px 20px;
     text-align: center;
-    border-top: 1px solid #181b21;
-    color: #666;
-    font-size: 13px;
+    padding: 40px 20px;
+    color: #5f707c;
+    border-top: 1px solid rgba(143,211,255,.1);
 }
 
-@media (max-width: 900px) {
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* 手機版 */
+@media(max-width: 700px) {
 
-@media (max-width: 650px) {
     nav {
-        padding: 15px 5%;
+        padding: 0 5%;
     }
 
-    nav div:last-child a {
-        margin-left: 10px;
+    .nav-links {
+        gap: 12px;
         font-size: 12px;
     }
 
-    .hero {
-        padding-top: 140px;
+    .hero,
+    section {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     h1 {
         letter-spacing: -2px;
     }
 
-    .hero p {
-        font-size: 16px;
-    }
-
-    section {
-        padding: 70px 5%;
-    }
-
-    .cards {
+    .download-box,
+    .socials {
         grid-template-columns: 1fr;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .about-box {
-        padding: 25px;
+    .hero-text {
+        font-size: 15px;
     }
 }
 </style>
@@ -277,132 +297,270 @@ footer {
 
 <body>
 
+<!-- 導覽列 -->
 <nav>
-    <div class="logo">雪・<span>FF 2022</span></div>
 
-    <div>
+    <div class="logo">
+        Yuki <span>ff 2022</span>
+    </div>
+
+    <div class="nav-links">
         <a href="#home">首頁</a>
-        <a href="#world">世界</a>
+        <a href="#download">下載</a>
+        <a href="#social">社群</a>
         <a href="#about">關於</a>
     </div>
+
 </nav>
 
+
+<!-- 首頁 -->
 <section class="hero" id="home">
+
+    <div class="glow"></div>
+
     <div class="hero-content">
 
-        <div class="badge">FREE FIRE • PERSONAL WEBSITE</div>
+        <div class="badge">
+            FREE FIRE 2022 · YUKI
+        </div>
 
         <h1>
-            雪・<span>FF 2022</span>
+            Yuki <span>ff 2022</span>
         </h1>
 
-        <p>
-            歡迎來到我的 Free Fire 個人網站。
-            這裡分享遊戲內容、精彩回憶、遊戲資訊，
-            以及屬於我的 FF 世界。
+        <p class="hero-text">
+            歡迎來到 Yuki ff 2022 的個人網站。
+            這裡可以下載安卓版、取得金鑰與創建帳號，
+            也可以找到我的 YouTube、TikTok 和 Discord。
         </p>
 
-        <a href="#world" class="btn">探索網站</a>
-        <a href="#about" class="btn dark">關於我</a>
+        <div class="buttons">
 
-    </div>
-</section>
+            <!-- 下載安卓版 -->
+            <a
+                class="btn btn-blue"
+                href="https://drive.usercontent.google.com/download?id=1trXRQV690PtNvrBGV3LVaF-MwAdpUOV0&export=download&authuser=0"
+                target="_blank"
+                rel="noopener"
+            >
+                📱 下載安卓版
+            </a>
 
-<section id="world">
+            <!-- 金鑰與創建帳號 -->
+            <a
+                class="btn btn-dark"
+                href="https://register.samosasmobiles.dpdns.org/"
+                target="_blank"
+                rel="noopener"
+            >
+                🔑 金鑰與創建帳號
+            </a>
 
-    <div class="section-title">
-        <small>Explore</small>
-        <h2>探索我的 Free Fire 世界</h2>
-        <p>分享遊戲內容、玩法與精彩時刻。</p>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">🎮</div>
-            <h3>Free Fire</h3>
-            <p>
-                分享 Free Fire 遊戲內容、
-                遊戲玩法與精彩時刻。
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🔥</div>
-            <h3>精彩內容</h3>
-            <p>
-                收集有趣的遊戲影片與
-                精彩遊戲內容。
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">⚡</div>
-            <h3>最新消息</h3>
-            <p>
-                未來可以在這裡放最新
-                遊戲資訊。
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🏆</div>
-            <h3>我的成就</h3>
-            <p>
-                展示遊戲紀錄、戰績與
-                個人作品。
-            </p>
-        </div>
-
-    </div>
-
-    <div class="stats">
-
-        <div class="stat">
-            <strong>FF</strong>
-            <span>我的遊戲世界</span>
-        </div>
-
-        <div class="stat">
-            <strong>2022</strong>
-            <span>網站名稱</span>
-        </div>
-
-        <div class="stat">
-            <strong>∞</strong>
-            <span>未來更新</span>
         </div>
 
     </div>
 
 </section>
 
+
+<!-- 下載中心 -->
+<section id="download">
+
+    <h2 class="title">
+        下載中心
+    </h2>
+
+    <p class="subtitle">
+        選擇你需要的功能
+    </p>
+
+    <div class="download-box">
+
+
+        <!-- Android -->
+        <div class="download-card">
+
+            <div class="download-icon">
+                📱
+            </div>
+
+            <h3>
+                下載安卓版
+            </h3>
+
+            <p>
+                Android 玩家可以從這裡下載。
+            </p>
+
+            <a
+                class="btn btn-blue"
+                href="https://drive.usercontent.google.com/download?id=1trXRQV690PtNvrBGV3LVaF-MwAdpUOV0&export=download&authuser=0"
+                target="_blank"
+                rel="noopener"
+            >
+                立即下載
+            </a>
+
+        </div>
+
+
+        <!-- 金鑰 -->
+        <div class="download-card">
+
+            <div class="download-icon">
+                🔑
+            </div>
+
+            <h3>
+                金鑰與創建帳號
+            </h3>
+
+            <p>
+                前往頁面創建帳號與取得相關資訊。
+            </p>
+
+            <a
+                class="btn btn-dark"
+                href="https://register.samosasmobiles.dpdns.org/"
+                target="_blank"
+                rel="noopener"
+            >
+                前往頁面
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 社群 -->
+<section id="social">
+
+    <h2 class="title">
+        我的社群
+    </h2>
+
+    <p class="subtitle">
+        歡迎來找 Yuki
+    </p>
+
+    <div class="socials">
+
+
+        <!-- YouTube -->
+        <div class="social-card">
+
+            <h3>
+                ▶️ YouTube
+            </h3>
+
+            <p>
+                @ImYuki-x54
+            </p>
+
+            <a
+                class="social-link"
+                href="https://www.youtube.com/@ImYuki-x54"
+                target="_blank"
+                rel="noopener"
+            >
+                開啟 YouTube →
+            </a>
+
+        </div>
+
+
+        <!-- TikTok -->
+        <div class="social-card">
+
+            <h3>
+                🎵 TikTok
+            </h3>
+
+            <p>
+                Im_yuki..67
+            </p>
+
+            <a
+                class="social-link"
+                href="https://www.tiktok.com/@Im_yuki..67"
+                target="_blank"
+                rel="noopener"
+            >
+                開啟 TikTok →
+            </a>
+
+        </div>
+
+
+        <!-- Discord -->
+        <div class="social-card">
+
+            <h3>
+                💬 Discord
+            </h3>
+
+            <p>
+                zk._.001
+            </p>
+
+            <span class="social-link">
+                zk._.001
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 關於我 -->
 <section id="about">
 
-    <div class="section-title">
-        <small>About</small>
-        <h2>關於我</h2>
-        <p>Yuki-Yuki-zkzk</p>
-    </div>
+    <h2 class="title">
+        關於 Yuki
+    </h2>
+
+    <p class="subtitle">
+        Yuki ff 2022
+    </p>
 
     <div class="about-box">
 
         <p>
-            歡迎來到「雪・FF 2022」。
+
+            嗨，我是 Yuki！🎮
+
             <br><br>
-            這是一個專門分享 Free Fire
-            遊戲內容的個人網站。
+
+            我的主要遊戲是
+            <strong>Free Fire 2022</strong>。
+
             <br><br>
-            未來還可以加入影片、圖片、
-            遊戲工具以及更多功能。
+
+            這個網站是我的個人遊戲網站，
+            用來分享遊戲內容、下載資訊，
+            以及我的 YouTube、TikTok 和 Discord。
+
+            <br><br>
+
+            💙 喜歡的主色：淺藍色
+
         </p>
 
     </div>
 
 </section>
 
+
 <footer>
-    © 2026 雪・FF 2022 · Made by Yuki-Yuki-zkzk
+
+    © 2026 Yuki ff 2022 · Made by Yuki
+
 </footer>
 
 </body>
